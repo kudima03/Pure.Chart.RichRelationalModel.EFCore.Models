@@ -13,9 +13,7 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
         IString description,
         IGuid typeId,
         ChartTypeEFCoreModel typeNavigation,
-        IGuid xAxisId,
         AxisEFCoreModel xAxisNavigation,
-        IGuid yAxisId,
         AxisEFCoreModel yAxisNavigation,
         IEnumerable<SeriesEFCoreModel> seriesNavigation
     )
@@ -25,9 +23,7 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
         Description = description;
         TypeId = typeId;
         TypeNavigation = typeNavigation;
-        XAxisId = xAxisId;
         XAxisNavigation = xAxisNavigation;
-        YAxisId = yAxisId;
         YAxisNavigation = yAxisNavigation;
         SeriesNavigation = seriesNavigation;
     }
@@ -44,13 +40,9 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
 
     public ChartTypeEFCoreModel TypeNavigation { get; }
 
-    public IGuid XAxisId { get; }
-
     public IAxis XAxis => XAxisNavigation;
 
     public AxisEFCoreModel XAxisNavigation { get; }
-
-    public IGuid YAxisId { get; }
 
     public IAxis YAxis => YAxisNavigation;
 
