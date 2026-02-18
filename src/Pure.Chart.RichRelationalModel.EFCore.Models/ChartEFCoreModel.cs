@@ -18,7 +18,7 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
         ChartTypeEFCoreModel typeNavigation,
         AxisEFCoreModel xAxisNavigation,
         AxisEFCoreModel yAxisNavigation,
-        IEnumerable<SeriesEFCoreModel> seriesNavigation
+        ICollection<SeriesEFCoreModel> seriesNavigation
     )
     {
         Id = id;
@@ -53,5 +53,5 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
 
     public IEnumerable<ISeries> Series => SeriesNavigation;
 
-    public IEnumerable<SeriesEFCoreModel> SeriesNavigation { get; }
+    public ICollection<SeriesEFCoreModel> SeriesNavigation { get; }
 }
