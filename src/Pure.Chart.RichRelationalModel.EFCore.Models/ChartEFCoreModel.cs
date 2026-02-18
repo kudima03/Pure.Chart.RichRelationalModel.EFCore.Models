@@ -7,6 +7,9 @@ namespace Pure.Chart.RichRelationalModel.EFCore.Models;
 
 public sealed record ChartEFCoreModel : IChartRichRelationalModel
 {
+    public ChartEFCoreModel(IGuid id, IString title, IString description, IGuid typeId)
+        : this(id, title, description, typeId, null!, null!, null!, null!) { }
+
     public ChartEFCoreModel(
         IGuid id,
         IString title,
