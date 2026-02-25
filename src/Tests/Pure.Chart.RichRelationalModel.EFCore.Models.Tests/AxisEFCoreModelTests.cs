@@ -63,16 +63,8 @@ public sealed record AxisEFCoreModelTests
         IGuid chartId = new Guid();
         IString legend = new String("legend");
 
-        IAxisRelationalModel a = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
-        IAxisRelationalModel b = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
+        IAxisRelationalModel a = new AxisEFCoreModel(new Guid(), chartId, legend);
+        IAxisRelationalModel b = new AxisEFCoreModel(new Guid(), chartId, legend);
 
         Assert.NotEqual(a, b);
     }

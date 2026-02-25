@@ -211,16 +211,8 @@ public sealed record ChartEFCoreModelTests
         );
         IGuid chartId = new Guid();
         IString legend = new String("Axis");
-        AxisEFCoreModel xAxis = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
-        AxisEFCoreModel yAxis = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
+        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
         ICollection<SeriesEFCoreModel> series = [];
 
         IChartRichRelationalModel a = new ChartEFCoreModel(
@@ -259,16 +251,8 @@ public sealed record ChartEFCoreModelTests
         );
         IGuid chartId = new Guid();
         IString legend = new String("Axis");
-        AxisEFCoreModel xAxis = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
-        AxisEFCoreModel yAxis = new AxisEFCoreModel(
-            new Guid(),
-            chartId,
-            legend
-        );
+        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
         ICollection<SeriesEFCoreModel> series = [];
 
         IChartRichRelationalModel a = new ChartEFCoreModel(

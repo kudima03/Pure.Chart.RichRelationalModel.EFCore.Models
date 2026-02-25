@@ -47,14 +47,8 @@ public sealed record ChartTypeEFCoreModelTests
     {
         IString name = new String("Line");
 
-        IChartTypeRelationalModel a = new ChartTypeEFCoreModel(
-            new Guid(),
-            name
-        );
-        IChartTypeRelationalModel b = new ChartTypeEFCoreModel(
-            new Guid(),
-            name
-        );
+        IChartTypeRelationalModel a = new ChartTypeEFCoreModel(new Guid(), name);
+        IChartTypeRelationalModel b = new ChartTypeEFCoreModel(new Guid(), name);
 
         Assert.NotEqual(a, b);
     }
