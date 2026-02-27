@@ -7,8 +7,27 @@ namespace Pure.Chart.RichRelationalModel.EFCore.Models;
 
 public sealed record ChartEFCoreModel : IChartRichRelationalModel
 {
-    public ChartEFCoreModel(IGuid id, IString title, IString description, IGuid typeId)
-        : this(id, title, description, typeId, null!, null!, null!, null!) { }
+    public ChartEFCoreModel(
+        IGuid id,
+        IString title,
+        IString description,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    )
+        : this(
+            id,
+            title,
+            description,
+            typeId,
+            null!,
+            xAxisId,
+            null!,
+            yAxisId,
+            null!,
+            null!
+        )
+    { }
 
     public ChartEFCoreModel(
         IGuid id,
@@ -16,7 +35,9 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
         IString description,
         IGuid typeId,
         ChartTypeEFCoreModel typeNavigation,
+        IGuid xAxisId,
         AxisEFCoreModel xAxisNavigation,
+        IGuid yAxisId,
         AxisEFCoreModel yAxisNavigation,
         ICollection<SeriesEFCoreModel> seriesNavigation
     )
@@ -26,7 +47,9 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
         Description = description;
         TypeId = typeId;
         TypeNavigation = typeNavigation;
+        XAxisId = xAxisId;
         XAxisNavigation = xAxisNavigation;
+        YAxisId = yAxisId;
         YAxisNavigation = yAxisNavigation;
         SeriesNavigation = seriesNavigation;
     }
@@ -43,9 +66,13 @@ public sealed record ChartEFCoreModel : IChartRichRelationalModel
 
     public ChartTypeEFCoreModel TypeNavigation { get; }
 
+    public IGuid XAxisId { get; }
+
     public IAxis XAxis => XAxisNavigation;
 
     public AxisEFCoreModel XAxisNavigation { get; }
+
+    public IGuid YAxisId { get; }
 
     public IAxis YAxis => YAxisNavigation;
 
