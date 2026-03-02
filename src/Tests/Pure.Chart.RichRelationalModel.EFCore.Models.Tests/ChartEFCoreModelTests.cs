@@ -306,4 +306,50 @@ public sealed record ChartEFCoreModelTests
 
         Assert.NotEqual(a, b);
     }
+
+    [Fact]
+    public void ConstructorAssignsXAxisId()
+    {
+        IGuid chartId = new Guid();
+        IString legend = new String("Axis");
+        IGuid xAxisId = new Guid();
+
+        ChartEFCoreModel model = new ChartEFCoreModel(
+            new Guid(),
+            new String("Title"),
+            new String("Description"),
+            new Guid(),
+            new ChartTypeEFCoreModel(new Guid(), new String("Line")),
+            xAxisId,
+            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new Guid(),
+            new AxisEFCoreModel(new Guid(), chartId, legend),
+            []
+        );
+
+        Assert.Equal(xAxisId.GuidValue, model.XAxisId.GuidValue);
+    }
+
+    [Fact]
+    public void ConstructorAssignsYAxisId()
+    {
+        IGuid chartId = new Guid();
+        IString legend = new String("Axis");
+        IGuid yAxisId = new Guid();
+
+        ChartEFCoreModel model = new ChartEFCoreModel(
+            new Guid(),
+            new String("Title"),
+            new String("Description"),
+            new Guid(),
+            new ChartTypeEFCoreModel(new Guid(), new String("Line")),
+            new Guid(),
+            new AxisEFCoreModel(new Guid(), chartId, legend),
+            yAxisId,
+            new AxisEFCoreModel(new Guid(), chartId, legend),
+            []
+        );
+
+        Assert.Equal(yAxisId.GuidValue, model.YAxisId.GuidValue);
+    }
 }
