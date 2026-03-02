@@ -310,8 +310,6 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void ConstructorAssignsXAxisId()
     {
-        IGuid chartId = new Guid();
-        IString legend = new String("Axis");
         IGuid xAxisId = new Guid();
 
         ChartEFCoreModel model = new ChartEFCoreModel(
@@ -319,12 +317,8 @@ public sealed record ChartEFCoreModelTests
             new String("Title"),
             new String("Description"),
             new Guid(),
-            new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             xAxisId,
-            new AxisEFCoreModel(new Guid(), chartId, legend),
-            new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
-            []
+            new Guid()
         );
 
         Assert.Equal(xAxisId.GuidValue, model.XAxisId.GuidValue);
