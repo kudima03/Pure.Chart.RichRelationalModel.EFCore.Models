@@ -4,9 +4,9 @@ using Pure.Primitives.Abstractions.String;
 
 namespace Pure.Chart.RichRelationalModel.EFCore.Models;
 
-public sealed record SeriesEFCoreModel : ISeriesRichRelationalModel
+public sealed record ChartSeriesEFCoreModel : IChartSeriesRichRelationalModel
 {
-    public SeriesEFCoreModel(
+    public ChartSeriesEFCoreModel(
         IGuid id,
         IGuid chartId,
         IString legend,

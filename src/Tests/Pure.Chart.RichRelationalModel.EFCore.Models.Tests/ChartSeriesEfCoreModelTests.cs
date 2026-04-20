@@ -6,7 +6,7 @@ using String = Pure.Primitives.String.String;
 
 namespace Pure.Chart.RichRelationalModel.EFCore.Models.Tests;
 
-public sealed record SeriesEFCoreModelTests
+public sealed record ChartSeriesEfCoreModelTests
 {
     [Fact]
     public void ConstructorAssignsId()
@@ -17,7 +17,7 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel model = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -37,7 +37,7 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel model = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -57,7 +57,7 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel model = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -77,7 +77,7 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel model = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -97,7 +97,7 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel model = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -117,14 +117,14 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel a = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel a = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
             yAxisSource
         );
-        ISeriesRelationalModel b = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel b = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
@@ -143,14 +143,14 @@ public sealed record SeriesEFCoreModelTests
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
 
-        ISeriesRelationalModel a = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel a = new ChartSeriesEFCoreModel(
             new Guid(),
             chartId,
             legend,
             xAxisSource,
             yAxisSource
         );
-        ISeriesRelationalModel b = new SeriesEFCoreModel(
+        IChartSeriesRelationalModel b = new ChartSeriesEFCoreModel(
             new Guid(),
             chartId,
             legend,
