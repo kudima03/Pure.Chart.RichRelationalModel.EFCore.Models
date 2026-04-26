@@ -6,16 +6,13 @@ namespace Pure.Chart.RichRelationalModel.EFCore.Models;
 
 public sealed record AxisEFCoreModel : IAxisRichRelationalModel
 {
-    public AxisEFCoreModel(IGuid id, IGuid chartId, IString legend)
+    public AxisEFCoreModel(IGuid id, IString legend)
     {
         Id = id;
         Legend = legend;
-        ChartId = chartId;
     }
 
     public IGuid Id { get; }
-
-    public IGuid ChartId { get; }
 
     public IString Legend { get; }
 }
