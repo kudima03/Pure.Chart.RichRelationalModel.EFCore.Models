@@ -14,7 +14,8 @@ public sealed record ChartEFCoreModelTests
     public void ConstructorAssignsId()
     {
         IGuid id = new Guid();
-        IGuid chartId = new Guid();
+
+        _ = new Guid();
         IString legend = new String("Axis");
 
         IChartRelationalModel model = new ChartEFCoreModel(
@@ -24,9 +25,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -36,7 +37,7 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void ConstructorAssignsTitle()
     {
-        IGuid chartId = new Guid();
+        _ = new Guid();
         IString legend = new String("Axis");
         IString title = new String("My Chart");
 
@@ -47,9 +48,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -59,7 +60,7 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void ConstructorAssignsDescription()
     {
-        IGuid chartId = new Guid();
+        _ = new Guid();
         IString legend = new String("Axis");
         IString description = new String("A description");
 
@@ -70,9 +71,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -82,7 +83,7 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void ConstructorAssignsTypeId()
     {
-        IGuid chartId = new Guid();
+        _ = new Guid();
         IString legend = new String("Axis");
         IGuid typeId = new Guid();
 
@@ -93,9 +94,9 @@ public sealed record ChartEFCoreModelTests
             typeId,
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -105,7 +106,7 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void TypeReturnsTypeNavigation()
     {
-        IGuid chartId = new Guid();
+        _ = new Guid();
         IString legend = new String("Axis");
         ChartTypeEFCoreModel typeNavigation = new ChartTypeEFCoreModel(
             new Guid(),
@@ -119,9 +120,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             typeNavigation,
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -131,11 +132,9 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void XAxisReturnsXAxisNavigation()
     {
-        IGuid chartId = new Guid();
         IString legend = new String("Axis");
         AxisEFCoreModel xAxisNavigation = new AxisEFCoreModel(
             new Guid(),
-            chartId,
             new String("X")
         );
 
@@ -148,7 +147,7 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             xAxisNavigation,
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 
@@ -158,11 +157,9 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void YAxisReturnsYAxisNavigation()
     {
-        IGuid chartId = new Guid();
         IString legend = new String("Axis");
         AxisEFCoreModel yAxisNavigation = new AxisEFCoreModel(
             new Guid(),
-            chartId,
             new String("Y")
         );
 
@@ -173,7 +170,7 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
             yAxisNavigation,
             []
@@ -205,9 +202,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             series
         );
 
@@ -225,12 +222,13 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new String("Line")
         );
-        IGuid chartId = new Guid();
+
+        _ = new Guid();
         IString legend = new String("Axis");
         IGuid xAxisId = new Guid();
-        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), legend);
         IGuid yAxisId = new Guid();
-        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), legend);
         ICollection<ChartSeriesEFCoreModel> series = [];
 
         IChartRichRelationalModel a = new ChartEFCoreModel(
@@ -271,12 +269,13 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new String("Line")
         );
-        IGuid chartId = new Guid();
+
+        _ = new Guid();
         IString legend = new String("Axis");
         IGuid xAxisId = new Guid();
-        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel xAxis = new AxisEFCoreModel(new Guid(), legend);
         IGuid yAxisId = new Guid();
-        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), chartId, legend);
+        AxisEFCoreModel yAxis = new AxisEFCoreModel(new Guid(), legend);
         ICollection<ChartSeriesEFCoreModel> series = [];
 
         IChartRichRelationalModel a = new ChartEFCoreModel(
@@ -327,7 +326,7 @@ public sealed record ChartEFCoreModelTests
     [Fact]
     public void ConstructorAssignsYAxisId()
     {
-        IGuid chartId = new Guid();
+        _ = new Guid();
         IString legend = new String("Axis");
         IGuid yAxisId = new Guid();
 
@@ -338,9 +337,9 @@ public sealed record ChartEFCoreModelTests
             new Guid(),
             new ChartTypeEFCoreModel(new Guid(), new String("Line")),
             new Guid(),
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             yAxisId,
-            new AxisEFCoreModel(new Guid(), chartId, legend),
+            new AxisEFCoreModel(new Guid(), legend),
             []
         );
 

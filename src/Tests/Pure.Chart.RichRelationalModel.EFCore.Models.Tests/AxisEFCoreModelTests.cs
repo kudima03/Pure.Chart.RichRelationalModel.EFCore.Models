@@ -12,34 +12,20 @@ public sealed record AxisEFCoreModelTests
     public void ConstructorAssignsId()
     {
         IGuid id = new Guid();
-        IGuid chartId = new Guid();
         IString legend = new String("legend");
 
-        IAxisRelationalModel model = new AxisEFCoreModel(id, chartId, legend);
+        IAxisRelationalModel model = new AxisEFCoreModel(id, legend);
 
         Assert.Equal(id.GuidValue, model.Id.GuidValue);
-    }
-
-    [Fact]
-    public void ConstructorAssignsChartId()
-    {
-        IGuid id = new Guid();
-        IGuid chartId = new Guid();
-        IString legend = new String("legend");
-
-        IAxisRelationalModel model = new AxisEFCoreModel(id, chartId, legend);
-
-        Assert.Equal(chartId.GuidValue, model.ChartId.GuidValue);
     }
 
     [Fact]
     public void ConstructorAssignsLegend()
     {
         IGuid id = new Guid();
-        IGuid chartId = new Guid();
         IString legend = new String("legend");
 
-        IAxisRelationalModel model = new AxisEFCoreModel(id, chartId, legend);
+        IAxisRelationalModel model = new AxisEFCoreModel(id, legend);
 
         Assert.Equal(legend.TextValue, model.Legend.TextValue);
     }
@@ -48,11 +34,10 @@ public sealed record AxisEFCoreModelTests
     public void EqualWhenSameProperties()
     {
         IGuid id = new Guid();
-        IGuid chartId = new Guid();
         IString legend = new String("legend");
 
-        IAxisRelationalModel a = new AxisEFCoreModel(id, chartId, legend);
-        IAxisRelationalModel b = new AxisEFCoreModel(id, chartId, legend);
+        IAxisRelationalModel a = new AxisEFCoreModel(id, legend);
+        IAxisRelationalModel b = new AxisEFCoreModel(id, legend);
 
         Assert.Equal(a, b);
     }
@@ -60,11 +45,10 @@ public sealed record AxisEFCoreModelTests
     [Fact]
     public void NotEqualWhenDifferentId()
     {
-        IGuid chartId = new Guid();
         IString legend = new String("legend");
 
-        IAxisRelationalModel a = new AxisEFCoreModel(new Guid(), chartId, legend);
-        IAxisRelationalModel b = new AxisEFCoreModel(new Guid(), chartId, legend);
+        IAxisRelationalModel a = new AxisEFCoreModel(new Guid(), legend);
+        IAxisRelationalModel b = new AxisEFCoreModel(new Guid(), legend);
 
         Assert.NotEqual(a, b);
     }
