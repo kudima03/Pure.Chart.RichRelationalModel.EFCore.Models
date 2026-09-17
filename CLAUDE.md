@@ -15,6 +15,8 @@ dotnet test --no-build --verbosity normal --logger trx --collect:"XPlat Code Cov
 dotnet pack --configuration Release -p:Version=<version> --output .
 ```
 
+CI additionally passes `-p:AssemblyVersion` (pinned to the major) and `-p:FileVersion`; see `.github/workflows/publish-nuget.yml`.
+
 ## Architecture
 
 This is a **concrete-implementation NuGet library** — four `sealed record` types that implement the interfaces from `Pure.Chart.RichRelationalModel.Abstractions` and serve as EF Core entity types.
