@@ -16,13 +16,15 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(id.GuidValue, model.Id.GuidValue);
@@ -36,13 +38,15 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(chartId.GuidValue, model.ChartId.GuidValue);
@@ -56,13 +60,15 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(legend.TextValue, model.Legend.TextValue);
@@ -76,13 +82,15 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(xAxisSource.TextValue, model.XAxisSource.TextValue);
@@ -96,16 +104,40 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(yAxisSource.TextValue, model.YAxisSource.TextValue);
+    }
+
+    [Fact]
+    public void ConstructorAssignsLineType()
+    {
+        IGuid id = new Guid();
+        IGuid chartId = new Guid();
+        IString legend = new String("Series 1");
+        IString xAxisSource = new String("Time");
+        IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
+
+        IChartSeriesRelationalModel model = new ChartSeriesEFCoreModel(
+            id,
+            chartId,
+            legend,
+            xAxisSource,
+            yAxisSource,
+            lineType
+        );
+
+        Assert.Equal(lineType.TextValue, model.LineType.TextValue);
     }
 
     [Fact]
@@ -116,20 +148,23 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel a = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
         IChartSeriesRelationalModel b = new ChartSeriesEFCoreModel(
             id,
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.Equal(a, b);
@@ -142,20 +177,23 @@ public sealed record ChartSeriesEfCoreModelTests
         IString legend = new String("Series 1");
         IString xAxisSource = new String("Time");
         IString yAxisSource = new String("Value");
+        IString lineType = new String("dashed");
 
         IChartSeriesRelationalModel a = new ChartSeriesEFCoreModel(
             new Guid(),
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
         IChartSeriesRelationalModel b = new ChartSeriesEFCoreModel(
             new Guid(),
             chartId,
             legend,
             xAxisSource,
-            yAxisSource
+            yAxisSource,
+            lineType
         );
 
         Assert.NotEqual(a, b);

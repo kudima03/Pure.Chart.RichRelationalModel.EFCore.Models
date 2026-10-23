@@ -25,7 +25,7 @@ This is a **concrete-implementation NuGet library** — four `sealed record` typ
 - `ChartEFCoreModel` → `IChartRichRelationalModel` — root chart aggregate with references to type, axes, and series
 - `ChartTypeEFCoreModel` → `IChartTypeRichRelationalModel` — lookup entity for chart kind (e.g. Line, Bar)
 - `AxisEFCoreModel` → `IAxisRichRelationalModel` — axis entity with a legend label
-- `ChartSeriesEFCoreModel` → `IChartSeriesRichRelationalModel` — series entity mapping legend and axis data sources
+- `ChartSeriesEFCoreModel` → `IChartSeriesRichRelationalModel` — series entity mapping legend, axis data sources and line type
 
 **Dual navigation property pattern:** Each model exposes a strongly-typed navigation property (e.g. `ChartTypeEFCoreModel TypeNavigation`) alongside the abstract interface property it satisfies (e.g. `IChartType Type => TypeNavigation`). EF Core binds to the concrete navigation; callers code against the interface.
 

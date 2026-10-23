@@ -191,7 +191,8 @@ public sealed record ChartEFCoreModelTests
                 chartId,
                 new String("S1"),
                 new String("Time"),
-                new String("Value")
+                new String("Value"),
+                new String("solid")
             ),
         ];
 
