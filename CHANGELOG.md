@@ -6,6 +6,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [0.1.0-preview.8.0.0] — 2026-10-23
+
+### Added
+- `ChartSeriesEFCoreModel.LineType` property, matching `IChartSeriesRichRelationalModel` in `Pure.Chart.RichRelationalModel.Abstractions` 0.1.0-preview.5.0.0.
+
+### Changed
+- `ChartSeriesEFCoreModel` constructor now takes an additional `IString lineType` parameter after `yAxisSource`.
+- Requires `Pure.Chart.RichRelationalModel.Abstractions` 0.1.0-preview.5.0.0.
+
 ## [0.1.0-preview.7.0.0] — 2026-04-26
 
 ### Removed
