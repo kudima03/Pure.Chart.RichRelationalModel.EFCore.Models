@@ -9,7 +9,7 @@ EF Core entity record implementations of the chart rich relational model for the
 
 ## Overview
 
-`Pure.Chart.RichRelationalModel.EFCore.Models` provides four `sealed record` types that implement the interfaces from [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.4.0.0) and are designed to be used as EF Core entity types.
+`Pure.Chart.RichRelationalModel.EFCore.Models` provides four `sealed record` types that implement the interfaces from [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.5.0.0) and are designed to be used as EF Core entity types.
 
 Each model exposes both a strongly-typed navigation property (e.g. `ChartTypeEFCoreModel TypeNavigation`) that EF Core can bind to, and an abstract interface property (e.g. `IChartType Type`) that delegates to the navigation property — allowing callers to program against the abstraction while EF Core works with the concrete type.
 
@@ -19,7 +19,7 @@ Each model exposes both a strongly-typed navigation property (e.g. `ChartTypeEFC
 |---|---|---|
 | `ChartEFCoreModel` | `IChartRichRelationalModel` | `Id`, `Title`, `Description`, `TypeId`, `TypeNavigation`/`Type`, `XAxisId`, `XAxisNavigation`/`XAxis`, `YAxisId`, `YAxisNavigation`/`YAxis`, `SeriesNavigation`/`Series` |
 | `ChartTypeEFCoreModel` | `IChartTypeRichRelationalModel` | `Id`, `Name` |
-| `ChartSeriesEFCoreModel` | `IChartSeriesRichRelationalModel` | `Id`, `ChartId`, `Legend`, `XAxisSource`, `YAxisSource` |
+| `ChartSeriesEFCoreModel` | `IChartSeriesRichRelationalModel` | `Id`, `ChartId`, `Legend`, `XAxisSource`, `YAxisSource`, `LineType` |
 | `AxisEFCoreModel` | `IAxisRichRelationalModel` | `Id`, `Legend` |
 
 All types live in the `Pure.Chart.RichRelationalModel.EFCore.Models` namespace.
@@ -32,7 +32,7 @@ All types live in the `Pure.Chart.RichRelationalModel.EFCore.Models` namespace.
 
 ## Dependencies
 
-- [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.4.0.0) — chart rich relational model interfaces (`IChartRichRelationalModel`, `IAxisRichRelationalModel`, `IChartSeriesRichRelationalModel`, `IChartTypeRichRelationalModel`)
+- [`Pure.Chart.RichRelationalModel.Abstractions`](https://github.com/kudima03/Pure.Chart.RichRelationalModel.Abstractions/tree/0.1.0-preview.5.0.0) — chart rich relational model interfaces (`IChartRichRelationalModel`, `IAxisRichRelationalModel`, `IChartSeriesRichRelationalModel`, `IChartTypeRichRelationalModel`)
 
 ## Target Frameworks
 
