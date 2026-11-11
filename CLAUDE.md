@@ -33,11 +33,11 @@ This is a **concrete-implementation NuGet library** — four `sealed record` typ
 
 **Dependency chain:** `Pure.Primitives.Abstractions` → `Pure.Chart.Model.Abstractions` + `Pure.Chart.RelationalModel.Abstractions` → `Pure.Chart.RichRelationalModel.Abstractions` → this library → `Pure.Chart.RichRelationalModel.EFCore.Models.Configurations` → `Pure.Chart.RichRelationalModel.EFCore`
 
-**Multi-targeting:** net7.0, net8.0, net9.0, net10.0. All models must remain AOT-compatible (`IsAotCompatible = true`).
+**Multi-targeting:** net7.0, net8.0, net9.0, net10.0, net11.0. All models must remain AOT-compatible (`IsAotCompatible = true`).
 
 **Package validation:** `EnablePackageValidation = true` with `PackageValidationBaselineVersion = 0.1.0-preview.8.0.0`. Breaking API changes fail the build.
 
-**Tests:** xUnit test project targeting net10.0 only, 99% line-coverage threshold enforced by CI, Stryker mutation testing at 99% threshold.
+**Tests:** xUnit test project targeting net11.0 only, 99% line-coverage threshold enforced by CI, Stryker mutation testing at 99% threshold.
 
 **Publishing:** triggered by pushing a semver tag matching `*.*.*`. The tag becomes the `PackageVersion`.
 
